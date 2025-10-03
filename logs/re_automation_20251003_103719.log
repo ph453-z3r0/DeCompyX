@@ -1,0 +1,3 @@
+2025-10-03 10:37:19,513 - RE_Automation - INFO - Starting analysis of target: test_sample.exe
+2025-10-03 10:37:19,522 - RE_Automation - INFO - Performing string and data mining...
+2025-10-03 10:37:19,731 - RE_Automation - INFO - Analysis completed. Report saved to: reports\re_analysis_report_test_sample_20251003_103719.html

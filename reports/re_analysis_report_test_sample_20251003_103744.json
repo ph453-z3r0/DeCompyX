@@ -1,0 +1,478 @@
+{
+  "target": "test_sample.exe",
+  "timestamp": "2025-10-03T10:37:43.864198",
+  "analysis_types": [
+    "static",
+    "dynamic",
+    "string_mining"
+  ],
+  "results": {
+    "static": {
+      "target": "test_sample.exe",
+      "analysis_type": "static",
+      "tools_used": [
+        "capstone"
+      ],
+      "results": {
+        "file_analysis": {
+          "size": 412,
+          "header_hex": "4d5a9090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909080000000",
+          "magic_bytes": "4d5a9090",
+          "is_executable": true,
+          "file_type": "PE"
+        },
+        "capstone": {
+          "note": "Capstone analysis requires capstone Python library",
+          "suggestion": "Install with: pip install capstone"
+        },
+        "binary_format": {
+          "type": "PE",
+          "error": "Invalid PE signature"
+        },
+        "imports_exports": {
+          "imports": [],
+          "exports": []
+        },
+        "functions": {
+          "functions": []
+        },
+        "strings": {
+          "strings": [],
+          "count": 0
+        },
+        "entropy": {
+          "entropy": 3.5333,
+          "is_likely_packed": false,
+          "file_size": 412
+        }
+      }
+    },
+    "dynamic": {
+      "target": "test_sample.exe",
+      "analysis_type": "dynamic",
+      "tools_used": [
+        "frida"
+      ],
+      "results": {
+        "pre_execution": {
+          "is_executable": true,
+          "dependencies": {
+            "dependencies": []
+          },
+          "suspicious_indicators": {
+            "indicators": [
+              "Very small file size"
+            ],
+            "risk_level": "medium"
+          },
+          "permissions": "0o100777"
+        },
+        "frida": {
+          "error": "[WinError 2] The system cannot find the file specified"
+        },
+        "process_monitoring": {
+          "process_info": {},
+          "execution_log": [],
+          "errors": [
+            "Process execution failed: [WinError 216] This version of %1 is not compatible with the version of Windows you're running. Check your computer's system information and then contact the software publisher"
+          ]
+        },
+        "network_analysis": {
+          "network_connections": [],
+          "dns_queries": [],
+          "http_requests": [],
+          "note": "Network analysis requires additional monitoring tools",
+          "suggested_tools": [
+            "Wireshark",
+            "tcpdump",
+            "netstat"
+          ]
+        },
+        "filesystem_monitoring": {
+          "files_created": [],
+          "files_modified": [],
+          "files_deleted": [],
+          "directories_created": [],
+          "error": "[WinError 216] This version of %1 is not compatible with the version of Windows you're running. Check your computer's system information and then contact the software publisher"
+        },
+        "memory_analysis": {
+          "memory_usage": {},
+          "memory_patterns": [],
+          "heap_analysis": {},
+          "note": "Memory analysis requires additional tools",
+          "suggested_tools": [
+            "Volatility",
+            "WinDbg",
+            "GDB"
+          ]
+        },
+        "registry_analysis": {
+          "registry_keys_modified": [],
+          "registry_values_created": [],
+          "registry_values_deleted": [],
+          "note": "Registry analysis requires additional monitoring tools",
+          "suggested_tools": [
+            "Process Monitor",
+            "RegShot"
+          ]
+        }
+      }
+    },
+    "string_mining": {
+      "target": "test_sample.exe",
+      "analysis_type": "string_mining",
+      "tools_used": [],
+      "results": {
+        "basic_strings": {
+          "strings": [
+            "192.168.1.1",
+            "CreateFileA",
+            "GetProcAddress",
+            "Hello World",
+            "LoadLibraryA",
+            "ReadProcessMemory",
+            "This is a test string",
+            "VirtualAlloc",
+            "WriteProcessMemory",
+            "admin@test.com",
+            "https://example.com",
+            "kernel32.dll"
+          ],
+          "count": 12,
+          "method": "custom_extraction"
+        },
+        "advanced_strings": {
+          "string_categories": {
+            "urls": [
+              "admin@test.com",
+              "https://example.com",
+              "kernel32.dll"
+            ],
+            "email_addresses": [],
+            "ip_addresses": [
+              "192.168.1.1"
+            ],
+            "file_paths": [],
+            "registry_keys": [],
+            "api_calls": [
+              "CreateFileA",
+              "GetProcAddress",
+              "Hello World",
+              "LoadLibraryA",
+              "ReadProcessMemory",
+              "This is a test string",
+              "VirtualAlloc",
+              "WriteProcessMemory"
+            ],
+            "base64": [],
+            "hex_strings": [],
+            "crypto_indicators": [],
+            "other": []
+          },
+          "suspicious_strings": [
+            {
+              "string": "admin@test.com",
+              "category": "admin_related",
+              "pattern": "admin|root|administrator"
+            }
+          ],
+          "string_statistics": {
+            "total_strings": 12,
+            "average_length": 14.333333333333334,
+            "min_length": 11,
+            "max_length": 21,
+            "unique_strings": 12,
+            "duplicate_strings": 0
+          }
+        },
+        "pattern_analysis": {
+          "patterns_found": {
+            "urls": [
+              "https://example.com\u0000admin@test.com\u0000192.168.1.1\u0000kernel32.dll\u0000CreateFileA\u0000GetProcAddress\u0000LoadLibraryA\u0000VirtualAlloc\u0000WriteProcessMemory\u0000ReadProcessMemory\u0000",
+              "kernel32.dll",
+              "test.com",
+              "example.com"
+            ],
+            "email_addresses": [
+              "admin@test.com"
+            ],
+            "ip_addresses": [
+              "192.168.1.1"
+            ],
+            "file_paths": [
+              "/",
+              "/example.com"
+            ],
+            "api_calls": [
+              "dll",
+              "https",
+              "PE",
+              "World",
+              "is",
+              "kernel",
+              "string",
+              "This",
+              "LoadLibraryA",
+              "GetProcAddress",
+              "MZ",
+              "example",
+              "CreateFileA",
+              "test",
+              "WriteProcessMemory",
+              "Hello",
+              "ReadProcessMemory",
+              "com",
+              "admin",
+              "VirtualAlloc"
+            ],
+            "base64": [
+              "Hello",
+              "//example",
+              "CreateFileA",
+              "World",
+              "ReadProcessMemory",
+              "test",
+              "LoadLibraryA",
+              "kernel32",
+              "string",
+              "This",
+              "admin",
+              "GetProcAddress",
+              "WriteProcessMemory",
+              "VirtualAlloc",
+              "https"
+            ]
+          },
+          "pattern_matches": [
+            {
+              "category": "urls",
+              "match": "https://example.com\u0000admin@test.com\u0000192.168.1.1\u0000kernel32.dll\u0000CreateFileA\u0000GetProcAddress\u0000LoadLibraryA\u0000VirtualAlloc\u0000WriteProcessMemory\u0000ReadProcessMemory\u0000"
+            },
+            {
+              "category": "urls",
+              "match": "example.com"
+            },
+            {
+              "category": "urls",
+              "match": "test.com"
+            },
+            {
+              "category": "urls",
+              "match": "kernel32.dll"
+            },
+            {
+              "category": "email_addresses",
+              "match": "admin@test.com"
+            },
+            {
+              "category": "ip_addresses",
+              "match": "192.168.1.1"
+            },
+            {
+              "category": "file_paths",
+              "match": "/"
+            },
+            {
+              "category": "file_paths",
+              "match": "/example.com"
+            },
+            {
+              "category": "api_calls",
+              "match": "MZ"
+            },
+            {
+              "category": "api_calls",
+              "match": "PE"
+            },
+            {
+              "category": "api_calls",
+              "match": "Hello"
+            },
+            {
+              "category": "api_calls",
+              "match": "World"
+            },
+            {
+              "category": "api_calls",
+              "match": "This"
+            },
+            {
+              "category": "api_calls",
+              "match": "is"
+            },
+            {
+              "category": "api_calls",
+              "match": "test"
+            },
+            {
+              "category": "api_calls",
+              "match": "string"
+            },
+            {
+              "category": "api_calls",
+              "match": "https"
+            },
+            {
+              "category": "api_calls",
+              "match": "example"
+            },
+            {
+              "category": "api_calls",
+              "match": "com"
+            },
+            {
+              "category": "api_calls",
+              "match": "admin"
+            },
+            {
+              "category": "api_calls",
+              "match": "test"
+            },
+            {
+              "category": "api_calls",
+              "match": "com"
+            },
+            {
+              "category": "api_calls",
+              "match": "kernel"
+            },
+            {
+              "category": "api_calls",
+              "match": "dll"
+            },
+            {
+              "category": "api_calls",
+              "match": "CreateFileA"
+            },
+            {
+              "category": "api_calls",
+              "match": "GetProcAddress"
+            },
+            {
+              "category": "api_calls",
+              "match": "LoadLibraryA"
+            },
+            {
+              "category": "api_calls",
+              "match": "VirtualAlloc"
+            },
+            {
+              "category": "api_calls",
+              "match": "WriteProcessMemory"
+            },
+            {
+              "category": "api_calls",
+              "match": "ReadProcessMemory"
+            },
+            {
+              "category": "base64",
+              "match": "Hello"
+            },
+            {
+              "category": "base64",
+              "match": "World"
+            },
+            {
+              "category": "base64",
+              "match": "This"
+            },
+            {
+              "category": "base64",
+              "match": "test"
+            },
+            {
+              "category": "base64",
+              "match": "string"
+            },
+            {
+              "category": "base64",
+              "match": "https"
+            },
+            {
+              "category": "base64",
+              "match": "//example"
+            },
+            {
+              "category": "base64",
+              "match": "admin"
+            },
+            {
+              "category": "base64",
+              "match": "test"
+            },
+            {
+              "category": "base64",
+              "match": "kernel32"
+            },
+            {
+              "category": "base64",
+              "match": "CreateFileA"
+            },
+            {
+              "category": "base64",
+              "match": "GetProcAddress"
+            },
+            {
+              "category": "base64",
+              "match": "LoadLibraryA"
+            },
+            {
+              "category": "base64",
+              "match": "VirtualAlloc"
+            },
+            {
+              "category": "base64",
+              "match": "WriteProcessMemory"
+            },
+            {
+              "category": "base64",
+              "match": "ReadProcessMemory"
+            }
+          ]
+        },
+        "encoded_strings": {
+          "base64_strings": [],
+          "hex_strings": [],
+          "encoded_patterns": []
+        },
+        "urls_paths": {
+          "urls": [
+            "https://example.com"
+          ],
+          "file_paths": [
+            "/",
+            "/example.com"
+          ],
+          "registry_paths": []
+        },
+        "apis_functions": {
+          "api_calls": [
+            "CreateFileA",
+            "GetProcAddress",
+            "LoadLibraryA",
+            "ReadProcessMemory",
+            "VirtualAlloc",
+            "WriteProcessMemory"
+          ],
+          "function_names": [],
+          "imported_functions": []
+        },
+        "config_data": {
+          "config_strings": [],
+          "key_value_pairs": [],
+          "json_data": [],
+          "xml_data": []
+        },
+        "crypto_material": {
+          "crypto_algorithms": [],
+          "crypto_keys": [],
+          "crypto_indicators": [
+            "GetProcAddress",
+            "https://example.com"
+          ],
+          "certificates": []
+        }
+      }
+    }
+  }
+}

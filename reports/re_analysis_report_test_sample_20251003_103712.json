@@ -1,0 +1,49 @@
+{
+  "target": "test_sample.exe",
+  "timestamp": "2025-10-03T10:37:11.968912",
+  "analysis_types": [
+    "static"
+  ],
+  "results": {
+    "static": {
+      "target": "test_sample.exe",
+      "analysis_type": "static",
+      "tools_used": [
+        "capstone"
+      ],
+      "results": {
+        "file_analysis": {
+          "size": 412,
+          "header_hex": "4d5a9090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909080000000",
+          "magic_bytes": "4d5a9090",
+          "is_executable": true,
+          "file_type": "PE"
+        },
+        "capstone": {
+          "note": "Capstone analysis requires capstone Python library",
+          "suggestion": "Install with: pip install capstone"
+        },
+        "binary_format": {
+          "type": "PE",
+          "error": "Invalid PE signature"
+        },
+        "imports_exports": {
+          "imports": [],
+          "exports": []
+        },
+        "functions": {
+          "functions": []
+        },
+        "strings": {
+          "strings": [],
+          "count": 0
+        },
+        "entropy": {
+          "entropy": 3.5333,
+          "is_likely_packed": false,
+          "file_size": 412
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,287 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse Engineering Analysis Report</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #2c3e50;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            color: #2c3e50;
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .header .subtitle {
+            color: #7f8c8d;
+            margin: 10px 0;
+            font-size: 1.2em;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .info-card {
+            background-color: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+        .info-card h3 {
+            margin: 0 0 10px 0;
+            color: #2c3e50;
+        }
+        .section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+        }
+        .section h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .analysis-type {
+            background-color: white;
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #e74c3c;
+        }
+        .analysis-type h3 {
+            margin: 0 0 10px 0;
+            color: #e74c3c;
+        }
+        .tools-used {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 10px 0;
+        }
+        .tool-tag {
+            background-color: #3498db;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.9em;
+        }
+        .results-content {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            white-space: pre-wrap;
+            overflow-x: auto;
+        }
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #f5c6cb;
+            margin: 10px 0;
+        }
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #c3e6cb;
+            margin: 10px 0;
+        }
+        .warning {
+            background-color: #fff3cd;
+            color: #856404;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ffeaa7;
+            margin: 10px 0;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #dee2e6;
+            color: #6c757d;
+        }
+        .collapsible {
+            background-color: #3498db;
+            color: white;
+            cursor: pointer;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 1em;
+            border-radius: 5px;
+            margin: 5px 0;
+        }
+        .collapsible:hover {
+            background-color: #2980b9;
+        }
+        .collapsible:after {
+            content: '\002B';
+            color: white;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+        .collapsible.active:after {
+            content: "\2212";
+        }
+        .content {
+            padding: 0 18px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            background-color: #f1f1f1;
+            border-radius: 0 0 5px 5px;
+        }
+        .content.active {
+            max-height: 1000px;
+            padding: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Reverse Engineering Analysis Report</h1>
+            <div class="subtitle">NTRO Approved - Government of India Project</div>
+        </div>
+        
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>Target Information</h3>
+                <p><strong>File:</strong> test_sample.exe</p>
+                <p><strong>Analysis Date:</strong> 2025-10-03T10:37:11.968912</p>
+                <p><strong>Analysis Types:</strong> static</p>
+            </div>
+            
+            <div class="info-card">
+                <h3>Analysis Summary</h3>
+                <p><strong>Total Analysis Types:</strong> 1</p>
+                <p><strong>Status:</strong> Completed</p>
+                <p><strong>Report Generated:</strong> 2025-10-03 10:37:12</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Static Analysis</h2>
+
+            <div class="tools-used">
+                <strong>Tools Used:</strong>
+                <span class="tool-tag">capstone</span>
+            </div>
+
+            <button class="collapsible">File Analysis</button>
+            <div class="content">
+                <div class="results-content">{
+  "size": 412,
+  "header_hex": "4d5a9090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909080000000",
+  "magic_bytes": "4d5a9090",
+  "is_executable": true,
+  "file_type": "PE"
+}</div>
+            </div>
+
+            <button class="collapsible">Capstone</button>
+            <div class="content">
+                <div class="results-content">{
+  "note": "Capstone analysis requires capstone Python library",
+  "suggestion": "Install with: pip install capstone"
+}</div>
+            </div>
+
+            <button class="collapsible">Binary Format</button>
+            <div class="content">
+                <div class="results-content">{
+  "type": "PE",
+  "error": "Invalid PE signature"
+}</div>
+            </div>
+
+            <button class="collapsible">Imports Exports</button>
+            <div class="content">
+                <div class="results-content">{
+  "imports": [],
+  "exports": []
+}</div>
+            </div>
+
+            <button class="collapsible">Functions</button>
+            <div class="content">
+                <div class="results-content">{
+  "functions": []
+}</div>
+            </div>
+
+            <button class="collapsible">Strings</button>
+            <div class="content">
+                <div class="results-content">{
+  "strings": [],
+  "count": 0
+}</div>
+            </div>
+
+            <button class="collapsible">Entropy</button>
+            <div class="content">
+                <div class="results-content">{
+  "entropy": 3.5333,
+  "is_likely_packed": false,
+  "file_size": 412
+}</div>
+            </div>
+</div>
+        <div class="footer">
+            <p>Generated by Reverse Engineering Automation Tool v1.0.0</p>
+            <p>NTRO - Government of India | Approved for Security Research</p>
+        </div>
+    </div>
+    
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+        
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+</body>
+</html>

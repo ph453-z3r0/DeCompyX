@@ -1,0 +1,366 @@
+{
+  "target": "test_sample.exe",
+  "timestamp": "2025-10-03T10:37:19.522903",
+  "analysis_types": [
+    "string_mining"
+  ],
+  "results": {
+    "string_mining": {
+      "target": "test_sample.exe",
+      "analysis_type": "string_mining",
+      "tools_used": [],
+      "results": {
+        "basic_strings": {
+          "strings": [
+            "192.168.1.1",
+            "CreateFileA",
+            "GetProcAddress",
+            "Hello World",
+            "LoadLibraryA",
+            "ReadProcessMemory",
+            "This is a test string",
+            "VirtualAlloc",
+            "WriteProcessMemory",
+            "admin@test.com",
+            "https://example.com",
+            "kernel32.dll"
+          ],
+          "count": 12,
+          "method": "custom_extraction"
+        },
+        "advanced_strings": {
+          "string_categories": {
+            "urls": [
+              "admin@test.com",
+              "https://example.com",
+              "kernel32.dll"
+            ],
+            "email_addresses": [],
+            "ip_addresses": [
+              "192.168.1.1"
+            ],
+            "file_paths": [],
+            "registry_keys": [],
+            "api_calls": [
+              "CreateFileA",
+              "GetProcAddress",
+              "Hello World",
+              "LoadLibraryA",
+              "ReadProcessMemory",
+              "This is a test string",
+              "VirtualAlloc",
+              "WriteProcessMemory"
+            ],
+            "base64": [],
+            "hex_strings": [],
+            "crypto_indicators": [],
+            "other": []
+          },
+          "suspicious_strings": [
+            {
+              "string": "admin@test.com",
+              "category": "admin_related",
+              "pattern": "admin|root|administrator"
+            }
+          ],
+          "string_statistics": {
+            "total_strings": 12,
+            "average_length": 14.333333333333334,
+            "min_length": 11,
+            "max_length": 21,
+            "unique_strings": 12,
+            "duplicate_strings": 0
+          }
+        },
+        "pattern_analysis": {
+          "patterns_found": {
+            "urls": [
+              "example.com",
+              "https://example.com\u0000admin@test.com\u0000192.168.1.1\u0000kernel32.dll\u0000CreateFileA\u0000GetProcAddress\u0000LoadLibraryA\u0000VirtualAlloc\u0000WriteProcessMemory\u0000ReadProcessMemory\u0000",
+              "kernel32.dll",
+              "test.com"
+            ],
+            "email_addresses": [
+              "admin@test.com"
+            ],
+            "ip_addresses": [
+              "192.168.1.1"
+            ],
+            "file_paths": [
+              "/example.com",
+              "/"
+            ],
+            "api_calls": [
+              "dll",
+              "GetProcAddress",
+              "example",
+              "is",
+              "CreateFileA",
+              "WriteProcessMemory",
+              "https",
+              "VirtualAlloc",
+              "kernel",
+              "string",
+              "Hello",
+              "This",
+              "PE",
+              "com",
+              "admin",
+              "test",
+              "LoadLibraryA",
+              "MZ",
+              "ReadProcessMemory",
+              "World"
+            ],
+            "base64": [
+              "GetProcAddress",
+              "//example",
+              "test",
+              "kernel32",
+              "LoadLibraryA",
+              "CreateFileA",
+              "ReadProcessMemory",
+              "WriteProcessMemory",
+              "https",
+              "VirtualAlloc",
+              "string",
+              "Hello",
+              "This",
+              "World",
+              "admin"
+            ]
+          },
+          "pattern_matches": [
+            {
+              "category": "urls",
+              "match": "https://example.com\u0000admin@test.com\u0000192.168.1.1\u0000kernel32.dll\u0000CreateFileA\u0000GetProcAddress\u0000LoadLibraryA\u0000VirtualAlloc\u0000WriteProcessMemory\u0000ReadProcessMemory\u0000"
+            },
+            {
+              "category": "urls",
+              "match": "example.com"
+            },
+            {
+              "category": "urls",
+              "match": "test.com"
+            },
+            {
+              "category": "urls",
+              "match": "kernel32.dll"
+            },
+            {
+              "category": "email_addresses",
+              "match": "admin@test.com"
+            },
+            {
+              "category": "ip_addresses",
+              "match": "192.168.1.1"
+            },
+            {
+              "category": "file_paths",
+              "match": "/"
+            },
+            {
+              "category": "file_paths",
+              "match": "/example.com"
+            },
+            {
+              "category": "api_calls",
+              "match": "MZ"
+            },
+            {
+              "category": "api_calls",
+              "match": "PE"
+            },
+            {
+              "category": "api_calls",
+              "match": "Hello"
+            },
+            {
+              "category": "api_calls",
+              "match": "World"
+            },
+            {
+              "category": "api_calls",
+              "match": "This"
+            },
+            {
+              "category": "api_calls",
+              "match": "is"
+            },
+            {
+              "category": "api_calls",
+              "match": "test"
+            },
+            {
+              "category": "api_calls",
+              "match": "string"
+            },
+            {
+              "category": "api_calls",
+              "match": "https"
+            },
+            {
+              "category": "api_calls",
+              "match": "example"
+            },
+            {
+              "category": "api_calls",
+              "match": "com"
+            },
+            {
+              "category": "api_calls",
+              "match": "admin"
+            },
+            {
+              "category": "api_calls",
+              "match": "test"
+            },
+            {
+              "category": "api_calls",
+              "match": "com"
+            },
+            {
+              "category": "api_calls",
+              "match": "kernel"
+            },
+            {
+              "category": "api_calls",
+              "match": "dll"
+            },
+            {
+              "category": "api_calls",
+              "match": "CreateFileA"
+            },
+            {
+              "category": "api_calls",
+              "match": "GetProcAddress"
+            },
+            {
+              "category": "api_calls",
+              "match": "LoadLibraryA"
+            },
+            {
+              "category": "api_calls",
+              "match": "VirtualAlloc"
+            },
+            {
+              "category": "api_calls",
+              "match": "WriteProcessMemory"
+            },
+            {
+              "category": "api_calls",
+              "match": "ReadProcessMemory"
+            },
+            {
+              "category": "base64",
+              "match": "Hello"
+            },
+            {
+              "category": "base64",
+              "match": "World"
+            },
+            {
+              "category": "base64",
+              "match": "This"
+            },
+            {
+              "category": "base64",
+              "match": "test"
+            },
+            {
+              "category": "base64",
+              "match": "string"
+            },
+            {
+              "category": "base64",
+              "match": "https"
+            },
+            {
+              "category": "base64",
+              "match": "//example"
+            },
+            {
+              "category": "base64",
+              "match": "admin"
+            },
+            {
+              "category": "base64",
+              "match": "test"
+            },
+            {
+              "category": "base64",
+              "match": "kernel32"
+            },
+            {
+              "category": "base64",
+              "match": "CreateFileA"
+            },
+            {
+              "category": "base64",
+              "match": "GetProcAddress"
+            },
+            {
+              "category": "base64",
+              "match": "LoadLibraryA"
+            },
+            {
+              "category": "base64",
+              "match": "VirtualAlloc"
+            },
+            {
+              "category": "base64",
+              "match": "WriteProcessMemory"
+            },
+            {
+              "category": "base64",
+              "match": "ReadProcessMemory"
+            }
+          ]
+        },
+        "encoded_strings": {
+          "base64_strings": [],
+          "hex_strings": [],
+          "encoded_patterns": []
+        },
+        "urls_paths": {
+          "urls": [
+            "https://example.com"
+          ],
+          "file_paths": [
+            "/example.com",
+            "/"
+          ],
+          "registry_paths": []
+        },
+        "apis_functions": {
+          "api_calls": [
+            "CreateFileA",
+            "GetProcAddress",
+            "LoadLibraryA",
+            "ReadProcessMemory",
+            "VirtualAlloc",
+            "WriteProcessMemory"
+          ],
+          "function_names": [],
+          "imported_functions": []
+        },
+        "config_data": {
+          "config_strings": [],
+          "key_value_pairs": [],
+          "json_data": [],
+          "xml_data": []
+        },
+        "crypto_material": {
+          "crypto_algorithms": [],
+          "crypto_keys": [],
+          "crypto_indicators": [
+            "GetProcAddress",
+            "https://example.com"
+          ],
+          "certificates": []
+        }
+      }
+    }
+  },
+  "report_path": "reports\\re_analysis_report_test_sample_20251003_103719.html"
+}

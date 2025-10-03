@@ -1,0 +1,52 @@
+{
+  "target": "test_sample.exe",
+  "timestamp": "2025-10-03T10:37:05.036439",
+  "scan_type": "quick",
+  "results": {
+    "file_info": {
+      "size": 412,
+      "modified": "2025-10-03T10:36:58.039132",
+      "permissions": "0o100777",
+      "extension": ".exe"
+    },
+    "strings": {
+      "strings": [
+        "192.168.1.1",
+        "CreateFileA",
+        "GetProcAddress",
+        "Hello World",
+        "LoadLibraryA",
+        "ReadProcessMemory",
+        "This is a test string",
+        "VirtualAlloc",
+        "WriteProcessMemory",
+        "admin@test.com",
+        "https://example.com",
+        "kernel32.dll"
+      ],
+      "count": 12,
+      "method": "custom_extraction"
+    },
+    "basic_static": {
+      "target": "test_sample.exe",
+      "analysis_type": "quick_static",
+      "results": {
+        "file_info": {
+          "name": "test_sample.exe",
+          "size": 412,
+          "size_mb": 0.0,
+          "modified": 1759468018.0391324,
+          "is_executable": true
+        },
+        "strings": {
+          "strings": [],
+          "count": 0
+        },
+        "binary_format": {
+          "type": "PE",
+          "error": "Invalid PE signature"
+        }
+      }
+    }
+  }
+}

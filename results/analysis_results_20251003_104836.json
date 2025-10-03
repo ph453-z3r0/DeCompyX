@@ -1,0 +1,716 @@
+{
+  "target": "test_sample.exe",
+  "timestamp": "2025-10-03T10:48:36.365141",
+  "analysis_types": [
+    "static",
+    "dynamic",
+    "symbolic",
+    "deobfuscation",
+    "string_mining"
+  ],
+  "results": {
+    "static": {
+      "target": "test_sample.exe",
+      "analysis_type": "static",
+      "tools_used": [
+        "capstone"
+      ],
+      "results": {
+        "file_analysis": {
+          "size": 412,
+          "header_hex": "4d5a9090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909080000000",
+          "magic_bytes": "4d5a9090",
+          "is_executable": true,
+          "file_type": "PE"
+        },
+        "capstone": {
+          "note": "Capstone analysis requires capstone Python library",
+          "suggestion": "Install with: pip install capstone"
+        },
+        "binary_format": {
+          "type": "PE",
+          "error": "Invalid PE signature"
+        },
+        "imports_exports": {
+          "imports": [],
+          "exports": []
+        },
+        "functions": {
+          "functions": []
+        },
+        "strings": {
+          "strings": [],
+          "count": 0
+        },
+        "entropy": {
+          "entropy": 3.5333,
+          "is_likely_packed": false,
+          "file_size": 412
+        }
+      }
+    },
+    "dynamic": {
+      "target": "test_sample.exe",
+      "analysis_type": "dynamic",
+      "tools_used": [
+        "frida"
+      ],
+      "results": {
+        "pre_execution": {
+          "is_executable": true,
+          "dependencies": {
+            "dependencies": []
+          },
+          "suspicious_indicators": {
+            "indicators": [
+              "Very small file size"
+            ],
+            "risk_level": "medium"
+          },
+          "permissions": "0o100777"
+        },
+        "frida": {
+          "error": "[WinError 2] The system cannot find the file specified"
+        },
+        "process_monitoring": {
+          "process_info": {},
+          "execution_log": [],
+          "errors": [
+            "Process execution failed: [WinError 216] This version of %1 is not compatible with the version of Windows you're running. Check your computer's system information and then contact the software publisher"
+          ]
+        },
+        "network_analysis": {
+          "network_connections": [],
+          "dns_queries": [],
+          "http_requests": [],
+          "note": "Network analysis requires additional monitoring tools",
+          "suggested_tools": [
+            "Wireshark",
+            "tcpdump",
+            "netstat"
+          ]
+        },
+        "filesystem_monitoring": {
+          "files_created": [],
+          "files_modified": [],
+          "files_deleted": [],
+          "directories_created": [],
+          "error": "[WinError 216] This version of %1 is not compatible with the version of Windows you're running. Check your computer's system information and then contact the software publisher"
+        },
+        "memory_analysis": {
+          "memory_usage": {},
+          "memory_patterns": [],
+          "heap_analysis": {},
+          "note": "Memory analysis requires additional tools",
+          "suggested_tools": [
+            "Volatility",
+            "WinDbg",
+            "GDB"
+          ]
+        },
+        "registry_analysis": {
+          "registry_keys_modified": [],
+          "registry_values_created": [],
+          "registry_values_deleted": [],
+          "note": "Registry analysis requires additional monitoring tools",
+          "suggested_tools": [
+            "Process Monitor",
+            "RegShot"
+          ]
+        }
+      }
+    },
+    "symbolic": {
+      "target": "test_sample.exe",
+      "analysis_type": "symbolic_execution",
+      "tools_used": [
+        "angr"
+      ],
+      "results": {
+        "angr": {
+          "error": "Angr not available",
+          "suggestion": "Install with: pip install angr"
+        },
+        "path_exploration": {
+          "paths_found": 0,
+          "unique_paths": 0,
+          "path_coverage": 0,
+          "interesting_paths": [],
+          "note": "Path exploration requires symbolic execution engine",
+          "suggested_approach": "Use Angr or KLEE for comprehensive path exploration"
+        },
+        "vulnerability_detection": {
+          "vulnerabilities_found": [],
+          "vulnerability_types": [
+            "buffer_overflow",
+            "use_after_free",
+            "double_free",
+            "integer_overflow",
+            "format_string",
+            "null_pointer_dereference"
+          ],
+          "exploitability": {},
+          "note": "Vulnerability detection requires symbolic execution engine",
+          "suggested_tools": [
+            "Angr",
+            "KLEE",
+            "SAGE",
+            "CUTE"
+          ]
+        },
+        "constraint_solving": {
+          "constraints_solved": 0,
+          "satisfiable_paths": 0,
+          "unsatisfiable_paths": 0,
+          "constraint_complexity": "unknown",
+          "note": "Constraint solving requires symbolic execution engine",
+          "suggested_solvers": [
+            "Z3",
+            "STP",
+            "CVC4",
+            "Boolector"
+          ]
+        }
+      }
+    },
+    "deobfuscation": {
+      "target": "test_sample.exe",
+      "analysis_type": "deobfuscation",
+      "tools_used": [
+        "ml"
+      ],
+      "results": {
+        "obfuscation_detection": {
+          "obfuscation_detected": true,
+          "obfuscation_types": [
+            "suspicious_imports"
+          ],
+          "confidence_score": 0.75,
+          "indicators": [
+            "VirtualAlloc",
+            "WriteProcessMemory",
+            "ReadProcessMemory",
+            "GetProcAddress",
+            "LoadLibrary"
+          ]
+        },
+        "ml_analysis": {
+          "ml_models_used": [],
+          "deobfuscation_attempts": [],
+          "success_rate": 0.0,
+          "note": "ML deobfuscation requires trained models",
+          "suggested_models": [
+            "LSTM for sequence deobfuscation",
+            "CNN for pattern recognition",
+            "Transformer for code understanding"
+          ]
+        },
+        "pattern_deobfuscation": {
+          "patterns_identified": [],
+          "deobfuscation_attempts": [],
+          "successful_deobfuscations": []
+        },
+        "string_deobfuscation": {
+          "strings_found": [
+            {
+              "offset": 228,
+              "length": 11,
+              "content": "Hello World"
+            },
+            {
+              "offset": 240,
+              "length": 21,
+              "content": "This is a test string"
+            },
+            {
+              "offset": 262,
+              "length": 19,
+              "content": "https://example.com"
+            },
+            {
+              "offset": 282,
+              "length": 14,
+              "content": "admin@test.com"
+            },
+            {
+              "offset": 297,
+              "length": 11,
+              "content": "192.168.1.1"
+            },
+            {
+              "offset": 309,
+              "length": 12,
+              "content": "kernel32.dll"
+            },
+            {
+              "offset": 322,
+              "length": 11,
+              "content": "CreateFileA"
+            },
+            {
+              "offset": 334,
+              "length": 14,
+              "content": "GetProcAddress"
+            },
+            {
+              "offset": 349,
+              "length": 12,
+              "content": "LoadLibraryA"
+            },
+            {
+              "offset": 362,
+              "length": 12,
+              "content": "VirtualAlloc"
+            },
+            {
+              "offset": 375,
+              "length": 18,
+              "content": "WriteProcessMemory"
+            },
+            {
+              "offset": 394,
+              "length": 17,
+              "content": "ReadProcessMemory"
+            }
+          ],
+          "deobfuscated_strings": [
+            {
+              "original": "Hello World",
+              "deobfuscated": "Idmmn!Vnsme",
+              "method": "_try_xor_deobfuscation"
+            },
+            {
+              "original": "This is a test string",
+              "deobfuscated": "Uihr!hr!`!udru!rushof",
+              "method": "_try_xor_deobfuscation"
+            },
+            {
+              "original": "https://example.com",
+              "deobfuscated": "iuuqr;..dy`lqmd/bnl",
+              "method": "_try_xor_deobfuscation"
+            },
+            {
+              "original": "admin@test.com",
+              "deobfuscated": "`elhoAudru/bnl",
+              "method": "_try_xor_deobfuscation"
+            },
+            {
+              "original": "192.168.1.1",
+              "deobfuscated": "083/079/0/0",
+              "method": "_try_xor_deobfuscation"
+            },
+            {
+              "original": "kernel32.dll",
+              "deobfuscated": "jdsodm23/emm",
+              "method": "_try_xor_deobfuscation"
+            },
+            {
+              "original": "CreateFileA",
+              "deobfuscated": "Bsd`udGhmd@",
+              "method": "_try_xor_deobfuscation"
+            },
+            {
+              "original": "GetProcAddress",
+              "deobfuscated": "FduQsnb@eesdrr",
+              "method": "_try_xor_deobfuscation"
+            },
+            {
+              "original": "LoadLibraryA",
+              "deobfuscated": "Mn`eMhcs`sx@",
+              "method": "_try_xor_deobfuscation"
+            },
+            {
+              "original": "VirtualAlloc",
+              "deobfuscated": "Whsut`m@mmnb",
+              "method": "_try_xor_deobfuscation"
+            },
+            {
+              "original": "WriteProcessMemory",
+              "deobfuscated": "VshudQsnbdrrLdlnsx",
+              "method": "_try_xor_deobfuscation"
+            },
+            {
+              "original": "ReadProcessMemory",
+              "deobfuscated": "Sd`eQsnbdrrLdlnsx",
+              "method": "_try_xor_deobfuscation"
+            }
+          ],
+          "deobfuscation_methods": []
+        },
+        "control_flow_deobfuscation": {
+          "control_flow_patterns": [],
+          "deobfuscation_attempts": [],
+          "successful_deobfuscations": [],
+          "note": "Control flow deobfuscation requires advanced analysis",
+          "suggested_tools": [
+            "IDA Pro",
+            "Ghidra",
+            "Radare2"
+          ]
+        },
+        "anti_analysis": {
+          "anti_analysis_detected": false,
+          "techniques": [],
+          "indicators": []
+        }
+      }
+    },
+    "string_mining": {
+      "target": "test_sample.exe",
+      "analysis_type": "string_mining",
+      "tools_used": [],
+      "results": {
+        "basic_strings": {
+          "strings": [
+            "192.168.1.1",
+            "CreateFileA",
+            "GetProcAddress",
+            "Hello World",
+            "LoadLibraryA",
+            "ReadProcessMemory",
+            "This is a test string",
+            "VirtualAlloc",
+            "WriteProcessMemory",
+            "admin@test.com",
+            "https://example.com",
+            "kernel32.dll"
+          ],
+          "count": 12,
+          "method": "custom_extraction"
+        },
+        "advanced_strings": {
+          "string_categories": {
+            "urls": [
+              "admin@test.com",
+              "https://example.com",
+              "kernel32.dll"
+            ],
+            "email_addresses": [],
+            "ip_addresses": [
+              "192.168.1.1"
+            ],
+            "file_paths": [],
+            "registry_keys": [],
+            "api_calls": [
+              "CreateFileA",
+              "GetProcAddress",
+              "Hello World",
+              "LoadLibraryA",
+              "ReadProcessMemory",
+              "This is a test string",
+              "VirtualAlloc",
+              "WriteProcessMemory"
+            ],
+            "base64": [],
+            "hex_strings": [],
+            "crypto_indicators": [],
+            "other": []
+          },
+          "suspicious_strings": [
+            {
+              "string": "admin@test.com",
+              "category": "admin_related",
+              "pattern": "admin|root|administrator"
+            }
+          ],
+          "string_statistics": {
+            "total_strings": 12,
+            "average_length": 14.333333333333334,
+            "min_length": 11,
+            "max_length": 21,
+            "unique_strings": 12,
+            "duplicate_strings": 0
+          }
+        },
+        "pattern_analysis": {
+          "patterns_found": {
+            "urls": [
+              "https://example.com\u0000admin@test.com\u0000192.168.1.1\u0000kernel32.dll\u0000CreateFileA\u0000GetProcAddress\u0000LoadLibraryA\u0000VirtualAlloc\u0000WriteProcessMemory\u0000ReadProcessMemory\u0000",
+              "kernel32.dll",
+              "example.com",
+              "test.com"
+            ],
+            "email_addresses": [
+              "admin@test.com"
+            ],
+            "ip_addresses": [
+              "192.168.1.1"
+            ],
+            "file_paths": [
+              "/",
+              "/example.com"
+            ],
+            "api_calls": [
+              "PE",
+              "com",
+              "admin",
+              "is",
+              "https",
+              "dll",
+              "LoadLibraryA",
+              "WriteProcessMemory",
+              "VirtualAlloc",
+              "CreateFileA",
+              "string",
+              "Hello",
+              "World",
+              "example",
+              "MZ",
+              "GetProcAddress",
+              "kernel",
+              "ReadProcessMemory",
+              "This",
+              "test"
+            ],
+            "base64": [
+              "Hello",
+              "WriteProcessMemory",
+              "admin",
+              "World",
+              "VirtualAlloc",
+              "GetProcAddress",
+              "ReadProcessMemory",
+              "https",
+              "CreateFileA",
+              "This",
+              "LoadLibraryA",
+              "test",
+              "//example",
+              "string",
+              "kernel32"
+            ]
+          },
+          "pattern_matches": [
+            {
+              "category": "urls",
+              "match": "https://example.com\u0000admin@test.com\u0000192.168.1.1\u0000kernel32.dll\u0000CreateFileA\u0000GetProcAddress\u0000LoadLibraryA\u0000VirtualAlloc\u0000WriteProcessMemory\u0000ReadProcessMemory\u0000"
+            },
+            {
+              "category": "urls",
+              "match": "example.com"
+            },
+            {
+              "category": "urls",
+              "match": "test.com"
+            },
+            {
+              "category": "urls",
+              "match": "kernel32.dll"
+            },
+            {
+              "category": "email_addresses",
+              "match": "admin@test.com"
+            },
+            {
+              "category": "ip_addresses",
+              "match": "192.168.1.1"
+            },
+            {
+              "category": "file_paths",
+              "match": "/"
+            },
+            {
+              "category": "file_paths",
+              "match": "/example.com"
+            },
+            {
+              "category": "api_calls",
+              "match": "MZ"
+            },
+            {
+              "category": "api_calls",
+              "match": "PE"
+            },
+            {
+              "category": "api_calls",
+              "match": "Hello"
+            },
+            {
+              "category": "api_calls",
+              "match": "World"
+            },
+            {
+              "category": "api_calls",
+              "match": "This"
+            },
+            {
+              "category": "api_calls",
+              "match": "is"
+            },
+            {
+              "category": "api_calls",
+              "match": "test"
+            },
+            {
+              "category": "api_calls",
+              "match": "string"
+            },
+            {
+              "category": "api_calls",
+              "match": "https"
+            },
+            {
+              "category": "api_calls",
+              "match": "example"
+            },
+            {
+              "category": "api_calls",
+              "match": "com"
+            },
+            {
+              "category": "api_calls",
+              "match": "admin"
+            },
+            {
+              "category": "api_calls",
+              "match": "test"
+            },
+            {
+              "category": "api_calls",
+              "match": "com"
+            },
+            {
+              "category": "api_calls",
+              "match": "kernel"
+            },
+            {
+              "category": "api_calls",
+              "match": "dll"
+            },
+            {
+              "category": "api_calls",
+              "match": "CreateFileA"
+            },
+            {
+              "category": "api_calls",
+              "match": "GetProcAddress"
+            },
+            {
+              "category": "api_calls",
+              "match": "LoadLibraryA"
+            },
+            {
+              "category": "api_calls",
+              "match": "VirtualAlloc"
+            },
+            {
+              "category": "api_calls",
+              "match": "WriteProcessMemory"
+            },
+            {
+              "category": "api_calls",
+              "match": "ReadProcessMemory"
+            },
+            {
+              "category": "base64",
+              "match": "Hello"
+            },
+            {
+              "category": "base64",
+              "match": "World"
+            },
+            {
+              "category": "base64",
+              "match": "This"
+            },
+            {
+              "category": "base64",
+              "match": "test"
+            },
+            {
+              "category": "base64",
+              "match": "string"
+            },
+            {
+              "category": "base64",
+              "match": "https"
+            },
+            {
+              "category": "base64",
+              "match": "//example"
+            },
+            {
+              "category": "base64",
+              "match": "admin"
+            },
+            {
+              "category": "base64",
+              "match": "test"
+            },
+            {
+              "category": "base64",
+              "match": "kernel32"
+            },
+            {
+              "category": "base64",
+              "match": "CreateFileA"
+            },
+            {
+              "category": "base64",
+              "match": "GetProcAddress"
+            },
+            {
+              "category": "base64",
+              "match": "LoadLibraryA"
+            },
+            {
+              "category": "base64",
+              "match": "VirtualAlloc"
+            },
+            {
+              "category": "base64",
+              "match": "WriteProcessMemory"
+            },
+            {
+              "category": "base64",
+              "match": "ReadProcessMemory"
+            }
+          ]
+        },
+        "encoded_strings": {
+          "base64_strings": [],
+          "hex_strings": [],
+          "encoded_patterns": []
+        },
+        "urls_paths": {
+          "urls": [
+            "https://example.com"
+          ],
+          "file_paths": [
+            "/",
+            "/example.com"
+          ],
+          "registry_paths": []
+        },
+        "apis_functions": {
+          "api_calls": [
+            "CreateFileA",
+            "GetProcAddress",
+            "LoadLibraryA",
+            "ReadProcessMemory",
+            "VirtualAlloc",
+            "WriteProcessMemory"
+          ],
+          "function_names": [],
+          "imported_functions": []
+        },
+        "config_data": {
+          "config_strings": [],
+          "key_value_pairs": [],
+          "json_data": [],
+          "xml_data": []
+        },
+        "crypto_material": {
+          "crypto_algorithms": [],
+          "crypto_keys": [],
+          "crypto_indicators": [
+            "https://example.com",
+            "GetProcAddress"
+          ],
+          "certificates": []
+        }
+      }
+    }
+  },
+  "report_path": "reports\\re_analysis_report_test_sample_20251003_104836.html"
+}

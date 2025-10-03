@@ -1,0 +1,136 @@
+{
+  "project_info": {
+    "name": "Reverse Engineering Automation Tool",
+    "version": "1.0.0",
+    "organization": "NTRO - Government of India",
+    "description": "Automated reverse engineering tool for security analysis"
+  },
+  "tools": {
+    "ghidra": {
+      "enabled": true,
+      "path": "ghidra",
+      "headless": true,
+      "timeout": 300
+    },
+    "radare2": {
+      "enabled": true,
+      "path": "r2",
+      "timeout": 60
+    },
+    "capstone": {
+      "enabled": true,
+      "timeout": 30
+    },
+    "x64dbg": {
+      "enabled": false,
+      "path": "x64dbg.exe",
+      "timeout": 300
+    },
+    "qemu": {
+      "enabled": false,
+      "path": "qemu-system-x86_64",
+      "timeout": 600
+    },
+    "frida": {
+      "enabled": true,
+      "timeout": 60
+    },
+    "angr": {
+      "enabled": true,
+      "timeout": 600,
+      "max_paths": 1000
+    },
+    "klee": {
+      "enabled": false,
+      "path": "klee",
+      "timeout": 1200
+    },
+    "loki": {
+      "enabled": false,
+      "path": "loki.py",
+      "timeout": 300
+    },
+    "dfsan": {
+      "enabled": false,
+      "timeout": 300
+    },
+    "strings": {
+      "enabled": true,
+      "path": "strings",
+      "min_length": 4
+    },
+    "binwalk": {
+      "enabled": true,
+      "path": "binwalk",
+      "timeout": 300
+    }
+  },
+  "static_analysis": {
+    "enabled": true,
+    "timeout": 300,
+    "max_file_size": 104857600,
+    "extract_strings": true,
+    "analyze_imports": true,
+    "calculate_entropy": true
+  },
+  "dynamic_analysis": {
+    "enabled": true,
+    "timeout": 300,
+    "sandbox_dir": "sandbox",
+    "monitor_processes": true,
+    "monitor_network": true,
+    "monitor_filesystem": true,
+    "monitor_registry": true
+  },
+  "symbolic_execution": {
+    "enabled": true,
+    "timeout": 600,
+    "max_paths": 1000,
+    "results_dir": "symbolic_results",
+    "vulnerability_detection": true,
+    "constraint_solving": true
+  },
+  "deobfuscation": {
+    "enabled": true,
+    "timeout": 300,
+    "results_dir": "deobfuscation_results",
+    "pattern_detection": true,
+    "string_deobfuscation": true,
+    "control_flow_deobfuscation": true,
+    "anti_analysis_detection": true
+  },
+  "string_mining": {
+    "enabled": true,
+    "timeout": 300,
+    "results_dir": "string_mining_results",
+    "min_string_length": 4,
+    "max_strings": 10000,
+    "extract_urls": true,
+    "extract_paths": true,
+    "extract_apis": true,
+    "detect_crypto": true
+  },
+  "output": {
+    "results_dir": "results",
+    "reports_dir": "reports",
+    "logs_dir": "logs",
+    "temp_dir": "temp",
+    "format": "json",
+    "include_screenshots": false,
+    "include_artifacts": true
+  },
+  "security": {
+    "sandbox_mode": true,
+    "isolate_network": true,
+    "quarantine_results": true,
+    "encrypt_output": false,
+    "hash_verification": true
+  },
+  "logging": {
+    "level": "INFO",
+    "file_logging": true,
+    "console_logging": true,
+    "max_file_size": 10485760,
+    "backup_count": 5
+  }
+}

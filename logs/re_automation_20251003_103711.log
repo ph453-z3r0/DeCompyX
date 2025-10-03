@@ -1,0 +1,3 @@
+2025-10-03 10:37:11,968 - RE_Automation - INFO - Starting analysis of target: test_sample.exe
+2025-10-03 10:37:11,969 - RE_Automation - INFO - Performing static analysis...
+2025-10-03 10:37:12,004 - RE_Automation - INFO - Analysis completed. Report saved to: reports\re_analysis_report_test_sample_20251003_103712.html
