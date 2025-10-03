@@ -67,8 +67,8 @@ See `requirements.txt` for complete list of Python packages.
 
 ### 1. Clone the Repository
 ```bash
-git clone <repository-url>
-cd reverse-eng
+git clone https://github.com/ph453-z3r0/DeCompyX.git
+cd DeCompyX
 ```
 
 ### 2. Install Python Dependencies
