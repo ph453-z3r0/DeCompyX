@@ -90,7 +90,7 @@ Edit `config.json` to customize analysis options and tool paths.
 
 ### Basic Usage
 ```bash
-python RevEngX.py <target_binary>
+python Decompyx.py <target_binary>
 ```
 
 ### Advanced Usage
@@ -202,7 +202,7 @@ python rea.py target.exe --analysis-types string_mining
 
 ```
 reverse-eng/
-├── RevEngX.py                         # Main automation script
+├── Decompyx.py                         # Main automation script
 ├── config.json                        # Configuration file
 ├── requirements.txt                   # Python dependencies
 ├── README.md                         # This file

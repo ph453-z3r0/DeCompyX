@@ -21,7 +21,7 @@ This document provides comprehensive usage examples for the Reverse Engineering 
 ### Simple Analysis
 ```bash
 # Analyze a single binary with all available analysis types
-python RevEngX.py malware_sample.exe
+python Decompyx.py malware_sample.exe
 
 # Quick scan for basic information
 python rea.py malware_sample.exe --quick

@@ -19,7 +19,7 @@ This document demonstrates practical usage examples of the Reverse Engineering A
 
 ```bash
 # Display help information
-python RevEngX.py --help
+python Decompyx.py --help
 ```
 
 **Output:**

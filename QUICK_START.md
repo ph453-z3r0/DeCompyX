@@ -7,7 +7,7 @@
 ### Command to run ALL analysis types:
 
 ```bash
-python RevEngX.py <target_binary>
+python Decompyx.py <target_binary>
 ```
 
 **This command automatically runs all 5 analysis types:**
@@ -20,7 +20,7 @@ python RevEngX.py <target_binary>
 ### Alternative explicit command:
 
 ```bash
-python RevEngX.py <target_binary> --analysis-types static dynamic symbolic deobfuscation string_mining
+python Decompyx.py <target_binary> --analysis-types static dynamic symbolic deobfuscation string_mining
 ```
 
 ## Quick Examples
@@ -61,7 +61,7 @@ The tool generates:
 
 ## File Renamed
 
-The main script has been renamed from `reverse_engineering_automation.py` to `RevEngX.py` for easier usage.
+The main script has been renamed from `reverse_engineering_automation.py` to `Decompyx.py` for easier usage.
 
 ## Installation
 
