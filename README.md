@@ -96,16 +96,16 @@ python Decompyx.py <target_binary>
 ### Advanced Usage
 ```bash
 # Specify analysis types
-python rea.py target.exe --analysis-types static dynamic
+python Decompyx.py target.exe --analysis-types static dynamic
 
 # Quick scan only
-python rea.py target.exe --quick
+python Decompyx.py target.exe --quick
 
 # Custom output directory
-python rea.py target.exe --output /path/to/results
+python Decompyx.py target.exe --output /path/to/results
 
 # Custom configuration
-python rea.py target.exe --config custom_config.json
+python Decompyx.py target.exe --config custom_config.json
 ```
 
 ### Command Line Options
@@ -118,7 +118,7 @@ python rea.py target.exe --config custom_config.json
 
 ### Static Analysis
 ```bash
-python rea.py target.exe --analysis-types static
+python Decompyx.py target.exe --analysis-types static
 ```
 
 **Tools Used:**
@@ -135,7 +135,7 @@ python rea.py target.exe --analysis-types static
 
 ### Dynamic Analysis
 ```bash
-python rea.py target.exe --analysis-types dynamic
+python Decompyx.py target.exe --analysis-types dynamic
 ```
 
 **Tools Used:**
@@ -152,7 +152,7 @@ python rea.py target.exe --analysis-types dynamic
 
 ### Symbolic Execution
 ```bash
-python rea.py target.exe --analysis-types symbolic
+python Decompyx.py target.exe --analysis-types symbolic
 ```
 
 **Tools Used:**
@@ -167,7 +167,7 @@ python rea.py target.exe --analysis-types symbolic
 
 ### Deobfuscation
 ```bash
-python rea.py target.exe --analysis-types deobfuscation
+python Decompyx.py target.exe --analysis-types deobfuscation
 ```
 
 **Tools Used:**
@@ -183,7 +183,7 @@ python rea.py target.exe --analysis-types deobfuscation
 
 ### String Mining
 ```bash
-python rea.py target.exe --analysis-types string_mining
+python Decompyx.py target.exe --analysis-types string_mining
 ```
 
 **Tools Used:**
@@ -330,7 +330,7 @@ The tool generates comprehensive reports in multiple formats:
 
 ### Debug Mode
 ```bash
-python rea.py target.exe --debug
+python Decompyx.py target.exe --debug
 ```
 
 ## 🤝 Contributing
