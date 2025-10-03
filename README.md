@@ -331,10 +331,6 @@ The tool generates comprehensive reports in multiple formats:
 python Decompyx.py target.exe --debug
 ```
 
-## 🤝 Contributing
-
-This is a government-approved project. Contributions are welcome but must follow security guidelines.
-
 ### Development Setup
 ```bash
 # Install development dependencies
@@ -350,18 +346,6 @@ black .
 # Lint code
 flake8 .
 ```
-
-## 📄 License
-
-This project is developed under NTRO (National Technical Research Organisation) approval for government security research purposes.
-
-## 🏛️ Government Approval
-
-This tool has been approved by the Government of India through NTRO for:
-- Security research and analysis
-- Malware analysis and reverse engineering
-- Cybersecurity education and training
-- Government security operations
 
 ## 📞 Support
 
