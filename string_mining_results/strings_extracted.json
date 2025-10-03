@@ -1,0 +1,26 @@
+{
+  "analysis_id": "string-001",
+  "target": "test_sample.exe",
+  "timestamp": "2023-07-15T15:10:45",
+  "extracted_strings": [
+    {
+      "value": "C:\\Windows\\System32\\",
+      "address": "0x00403456",
+      "encoding": "ASCII"
+    },
+    {
+      "value": "HKEY_LOCAL_MACHINE\\SOFTWARE\\",
+      "address": "0x00403789",
+      "encoding": "ASCII"
+    },
+    {
+      "value": "https://malicious-domain.example.com/payload",
+      "address": "0x00404012",
+      "encoding": "ASCII"
+    }
+  ],
+  "iocs": [
+    "malicious-domain.example.com",
+    "C:\\Windows\\System32\\svchost.exe"
+  ]
+}

@@ -145,6 +145,10 @@ sandbox/
 
 # Analysis outputs
 *.json
+!demo_results/*.json
+!string_mining_results/*.json
+!symbolic_results/*.json
+!deobfuscation_results/*.json
 *.html
 *.txt
 *.log

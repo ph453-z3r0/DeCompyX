@@ -1,0 +1,19 @@
+{
+  "analysis_id": "symbolic-001",
+  "target": "test_sample.py",
+  "timestamp": "2023-07-16T09:22:15",
+  "execution_paths": 8,
+  "constraints_solved": 12,
+  "critical_paths": [
+    {
+      "path_id": "path-1",
+      "conditions": ["input[0] == 'A'", "len(input) > 10"],
+      "leads_to": "file_access"
+    },
+    {
+      "path_id": "path-2",
+      "conditions": ["input.startswith('CMD:')", "checksum(input) == 0x1234"],
+      "leads_to": "command_execution"
+    }
+  ]
+}

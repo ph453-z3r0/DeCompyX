@@ -1,0 +1,27 @@
+{
+  "analysis_id": "demo-001",
+  "target": "test_sample.exe",
+  "timestamp": "2023-07-15T14:30:22",
+  "summary": {
+    "file_type": "PE32 executable",
+    "architecture": "x86",
+    "entropy": 6.78,
+    "size": 45056,
+    "detected_techniques": ["string obfuscation", "anti-debugging"]
+  },
+  "findings": [
+    {
+      "type": "suspicious_api",
+      "api": "VirtualProtect",
+      "address": "0x00401234",
+      "description": "Memory protection modification, potentially for code injection"
+    },
+    {
+      "type": "suspicious_string",
+      "value": "cmd.exe /c",
+      "address": "0x00402345",
+      "description": "Command execution capability detected"
+    }
+  ],
+  "risk_score": 7.5
+}
