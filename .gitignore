@@ -130,6 +130,13 @@ dmypy.json
 
 # Reverse Engineering Automation Tool specific
 # Results and reports
+# Excluding demo results and examples
+!demo_results/
+!string_mining_results/
+!symbolic_results/
+!deobfuscation_results/
+
+# Regular results (excluding demo files)
 results/
 reports/
 logs/
