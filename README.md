@@ -1,7 +1,5 @@
 # Reverse Engineering Automation Tool
 
-**NTRO Approved - Government of India Project**
-
 A comprehensive automated reverse engineering tool that integrates multiple open-source analysis frameworks for security research and malware analysis.
 
 ## 🎯 Overview
