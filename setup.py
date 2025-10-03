@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """
 Setup script for Reverse Engineering Automation Tool
-NTRO Approved - Government of India Project
 """
 
 from setuptools import setup, find_packages
@@ -18,12 +17,9 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
 setup(
     name="reverse-engineering-automation",
     version="1.0.0",
-    author="NTRO - Government of India",
-    author_email="contact@ntro.gov.in",
     description="Automated reverse engineering tool for security analysis",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/ntro/reverse-engineering-automation",
     packages=find_packages(),
     classifiers=[
         "Development Status :: 5 - Production/Stable",
